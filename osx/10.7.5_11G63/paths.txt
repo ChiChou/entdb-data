@@ -1,0 +1,27 @@
+/Applications/App Store.app/Contents/MacOS/App Store
+/Applications/FaceTime.app/Contents/MacOS/FaceTime
+/Applications/Font Book.app/Contents/MacOS/Font Book
+/Applications/Preview.app/Contents/MacOS/Preview
+/Applications/TextEdit.app/Contents/MacOS/TextEdit
+/Applications/Utilities/AirPort Utility.app/Contents/MacOS/AirPort Utility
+/Applications/Utilities/RAID Utility.app/Contents/MacOS/RAID Utility
+/System/Library/CoreServices/AddPrinter.app/Contents/MacOS/AddPrinter
+/System/Library/CoreServices/Dock.app/Contents/MacOS/Dock
+/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder
+/System/Library/CoreServices/Screen Sharing.app/Contents/MacOS/Screen Sharing
+/System/Library/CoreServices/Software Update.app/Contents/MacOS/Software Update
+/System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow
+/System/Library/Frameworks/AddressBook.framework/Versions/A/Resources/AddressBookSourceSync.app/Contents/MacOS/AddressBookSourceSync
+/System/Library/Frameworks/AudioToolbox.framework/XPCServices/com.apple.audio.SandboxHelper.xpc/Contents/MacOS/com.apple.audio.SandboxHelper
+/System/Library/Input Methods/Kotoeri.app/Contents/MacOS/Kotoeri
+/System/Library/Input Methods/Kotoeri.app/Contents/Support/KotoeriDictSyncHelper.app/Contents/MacOS/KotoeriDictSyncHelper
+/System/Library/Input Methods/Kotoeri.app/Contents/Support/WordRegister.app/Contents/MacOS/WordRegister
+/System/Library/PrivateFrameworks/BookmarkDAV.framework/Versions/A/Helpers/SafariDAVClient
+/System/Library/PrivateFrameworks/IMCore.framework/imagent.app/Contents/MacOS/imagent
+/System/Library/PrivateFrameworks/PrintingPrivate.framework/Versions/A/PrintUITool
+/System/Library/PrivateFrameworks/RemoteViewServices.framework/XPCServices/com.apple.security.pboxd.xpc/Contents/MacOS/com.apple.security.pboxd
+/System/Library/PrivateFrameworks/SyncedDefaults.framework/Support/syncdefaultsd
+/System/Library/PrivateFrameworks/Ubiquity.framework/Versions/A/Support/ubd
+/usr/libexec/mdmclient
+/usr/sbin/aosnotifyd
+/usr/sbin/netbiosd

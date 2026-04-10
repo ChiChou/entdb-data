@@ -1,0 +1,81 @@
+name: Build and Release Data
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - ".github/**"
+      - "scripts/**"
+      - "README.md"
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout data repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Download previous release
+        id: previous
+        run: |
+          mkdir -p previous
+          if gh release download --pattern "data.tar.gz" -D previous 2>/dev/null; then
+            cd previous && tar -xzf data.tar.gz && rm data.tar.gz
+            echo "found=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "No previous release found, doing full build"
+            echo "found=false" >> "$GITHUB_OUTPUT"
+          fi
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Build artifacts (incremental)
+        run: |
+          ARGS="-o build-output"
+          if [ "${{ steps.previous.outputs.found }}" = "true" ]; then
+            ARGS="$ARGS --previous previous"
+          fi
+          python scripts/build.py $ARGS
+
+      - name: Package artifacts
+        run: |
+          cd build-output
+          tar -czf ../data.tar.gz --exclude=ent.db .
+          cp ent.db ../ent.db
+
+      - name: Create release
+        run: |
+          TAG="$(date -u +%Y-%m-%d)"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            SEQ=2
+            while gh release view "${TAG}-${SEQ}" >/dev/null 2>&1; do
+              SEQ=$((SEQ + 1))
+            done
+            TAG="${TAG}-${SEQ}"
+          fi
+
+          gh release create "$TAG" \
+            --title "Data Build $TAG" \
+            --notes "Auto-built from latest data." \
+            --latest \
+            data.tar.gz ent.db
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Trigger website deploy
+        run: |
+          gh api repos/ChiChou/entdb-web/dispatches \
+            -f event_type=data-updated
+        env:
+          GH_TOKEN: ${{ secrets.ENTDB_WEB_PAT }}

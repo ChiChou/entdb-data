@@ -1,0 +1,6 @@
+data/
+*.tar.gz
+*.db
+
+__pycache__/
+*.py[codz]
