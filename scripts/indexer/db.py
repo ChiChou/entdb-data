@@ -78,11 +78,50 @@ class Reader:
         self.conn = sqlite3.connect(self.path)
 
     def all_os(self):
-        cursor = self.conn.execute("SELECT name, version, build, devices FROM os")
+        cursor = self.conn.execute("SELECT id, name, version, build, devices FROM os")
         return [
-            dict(name=name, version=version, build=build, devices=json.loads(devices))
-            for name, version, build, devices in cursor.fetchall()
+            dict(
+                id=osid,
+                name=name,
+                version=version,
+                build=build,
+                devices=json.loads(devices),
+            )
+            for osid, name, version, build, devices in cursor.fetchall()
         ]
+
+    def paths_by_osid(self, osid: int) -> list[str]:
+        cursor = self.conn.execute(
+            "SELECT path FROM bin WHERE osid=?",
+            (osid,),
+        )
+        return [row[0] for row in cursor.fetchall()]
+
+    def binaries_by_osid(self, osid: int):
+        cursor = self.conn.execute(
+            "SELECT path, xml FROM bin WHERE osid=?",
+            (osid,),
+        )
+        return [dict(path=path, xml=xml) for path, xml in cursor.fetchall()]
+
+    def keys_by_osid(self, osid: int):
+        cursor = self.conn.execute(
+            """
+            SELECT distinct key FROM pair
+            JOIN bin ON pair.binid=bin.id
+            WHERE bin.osid=?""",
+            (osid,),
+        )
+        return [row[0] for row in cursor.fetchall()]
+
+    def owns_key_by_osid(self, osid: int, key: str) -> list[str]:
+        cursor = self.conn.execute(
+            """
+            SELECT path FROM bin JOIN pair ON bin.id=pair.binid
+            WHERE bin.osid=? AND pair.key=?""",
+            (osid, key),
+        )
+        return [row[0] for row in cursor.fetchall()]
 
     def metadata(self, build: str):
         cursor = self.conn.execute(

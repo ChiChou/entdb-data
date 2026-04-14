@@ -16,6 +16,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
 
     steps:
       - name: Checkout data repo
@@ -41,12 +42,13 @@ jobs:
           GH_TOKEN: ${{ github.token }}
 
       - name: Build artifacts (incremental)
+        timeout-minutes: 50
         run: |
           ARGS="-o build-output"
           if [ "${{ steps.previous.outputs.found }}" = "true" ]; then
             ARGS="$ARGS --previous previous"
           fi
-          python scripts/build.py $ARGS
+          python -u scripts/build.py $ARGS
 
       - name: Package artifacts
         run: |
@@ -73,9 +75,3 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
 
-      - name: Trigger website deploy
-        run: |
-          gh api repos/ChiChou/entdb-web/dispatches \
-            -f event_type=data-updated
-        env:
-          GH_TOKEN: ${{ secrets.ENTDB_WEB_PAT }}

@@ -15,22 +15,22 @@ def export_static(db_path: str, output_dir: Path) -> list[str]:
 
     for os_info in reader.all_os():
         oslist.append(os_info)
-        build = os_info["build"]
+        osid = os_info["id"]
 
         subdir = output_dir / f"{os_info['version']}_{os_info['build']}"
         subdir.mkdir(parents=True, exist_ok=True)
         written.append(subdir.name)
 
         with (subdir / "paths.txt").open("w") as fp:
-            fp.write("\n".join(reader.paths(build)))
+            fp.write("\n".join(reader.paths_by_osid(osid)))
 
         with KVStore(subdir / "blobs.index.json", subdir / "blobs.txt") as blobs_store:
-            for b in reader.binaries(build):
+            for b in reader.binaries_by_osid(osid):
                 blobs_store.add(b["path"], b["xml"])
 
         with KVStore(subdir / "keys.index.json", subdir / "keys.txt") as keys_store:
-            for key in reader.keys(build):
-                paths = reader.owns_key(build, key)
+            for key in reader.keys_by_osid(osid):
+                paths = reader.owns_key_by_osid(osid, key)
                 keys_store.add(key, "\n".join(paths).encode())
 
         with open(subdir / "meta.json", "w") as fp:

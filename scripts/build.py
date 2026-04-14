@@ -48,19 +48,19 @@ def find_existing_versions(previous: Path) -> set[str]:
     return existing
 
 
-def build_kv_for_version(reader: Reader, build: str, subdir: Path):
+def build_kv_for_version(reader: Reader, osid: int, subdir: Path):
     subdir.mkdir(parents=True, exist_ok=True)
 
     with (subdir / "paths.txt").open("w") as fp:
-        fp.write("\n".join(reader.paths(build)))
+        fp.write("\n".join(reader.paths_by_osid(osid)))
 
     with KVStore(subdir / "blobs.index.json", subdir / "blobs.txt") as blobs_store:
-        for b in reader.binaries(build):
+        for b in reader.binaries_by_osid(osid):
             blobs_store.add(b["path"], b["xml"])
 
     with KVStore(subdir / "keys.index.json", subdir / "keys.txt") as keys_store:
-        for key in reader.keys(build):
-            paths = reader.owns_key(build, key)
+        for key in reader.keys_by_osid(osid):
+            paths = reader.owns_key_by_osid(osid, key)
             keys_store.add(key, "\n".join(paths).encode())
 
 
@@ -132,6 +132,7 @@ def main():
 
         for os_info in os_list:
             build = os_info["build"]
+            osid = os_info["id"]
             tag = f"{os_info['version']}_{build}"
             version_key = f"{group}/{tag}"
             subdir = group_out / tag
@@ -145,7 +146,7 @@ def main():
                     reused += 1
                     continue
 
-            build_kv_for_version(reader, build, subdir)
+            build_kv_for_version(reader, osid, subdir)
             with open(subdir / "meta.json", "w") as fp:
                 json.dump(os_info, fp)
             built += 1

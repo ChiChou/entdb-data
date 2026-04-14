@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS "os" (
     "build" VARCHAR(32) NOT NULL,
     "devices" TEXT,
     "version" VARCHAR(32) NOT NULL,
-    UNIQUE("name", "build"));
+    UNIQUE("name", "version", "build"));
 
 CREATE TABLE IF NOT EXISTS "bin" (
     "id" INTEGER NOT NULL PRIMARY KEY,
