@@ -1350,5 +1350,13 @@
       "iMac21,1",
       "iMac21,2"
     ]
+  },
+  {
+    "name": "macOS 26.0",
+    "version": "26.0.1",
+    "build": "25A8364",
+    "devices": [
+      "Mac17,2"
+    ]
   }
 ]
