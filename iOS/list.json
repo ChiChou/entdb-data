@@ -1,1 +1,770 @@
-[{"name": "iOS 15.0.2", "version": "15.0.2", "build": "19A404", "devices": ["iPhone14,5"]}, {"name": "iOS 10.0.3", "version": "10.0.3", "build": "14A551", "devices": ["iPhone9,2", "iPhone9,4"]}, {"name": "iOS 10.1.1", "version": "10.1.1", "build": "14B100", "devices": ["iPhone9,4", "iPhone9,2"]}, {"name": "iOS 10.2.1", "version": "10.2.1", "build": "14D27", "devices": ["iPhone9,4", "iPhone9,2"]}, {"name": "iOS 10.3.4", "version": "10.3.4", "build": "14G61", "devices": ["iPhone5,1", "iPhone5,2", "iPhone5,3", "iPhone5,4"]}, {"name": "iOS 11.0.3", "version": "11.0.3", "build": "15A432", "devices": ["iPhone10,5", "iPhone10,2"]}, {"name": "iOS 11.1.2", "version": "11.1.2", "build": "15B202", "devices": ["iPhone10,6", "iPhone10,3"]}, {"name": "iOS 11.2.6", "version": "11.2.6", "build": "15D100", "devices": ["iPhone10,6", "iPhone10,3"]}, {"name": "iOS 11.3.1", "version": "11.3.1", "build": "15E302", "devices": ["iPhone10,6", "iPhone10,3"]}, {"name": "iOS 11.4.1", "version": "11.4.1", "build": "15G77", "devices": ["iPhone10,6", "iPhone10,3"]}, {"name": "iOS 12.0.1", "version": "12.0.1", "build": "16A405", "devices": ["iPhone11,8"]}, {"name": "iOS 12.2", "version": "12.2", "build": "16E227", "devices": ["iPhone11,8"]}, {"name": "iOS 12.3.2", "version": "12.3.2", "build": "16F250", "devices": ["iPhone9,4", "iPhone10,5", "iPhone10,2", "iPhone9,2"]}, {"name": "iOS 12.4.9", "version": "12.4.9", "build": "16H5", "devices": ["iPhone7,2"]}, {"name": "iOS 12.5.7", "version": "12.5.7", "build": "16H81", "devices": ["iPhone7,2"]}, {"name": "iOS 13.0", "version": "13.0", "build": "17A577", "devices": ["iPhone12,5", "iPhone12,3"]}, {"name": "iOS 13.1.3", "version": "13.1.3", "build": "17A878", "devices": ["iPhone12,5", "iPhone12,3"]}, {"name": "iOS 13.2.3", "version": "13.2.3", "build": "17B111", "devices": ["iPhone12,5", "iPhone12,3"]}, {"name": "iOS 13.3.1", "version": "13.3.1", "build": "17D50", "devices": ["iPhone11,6", "iPhone11,4", "iPhone11,2", "iPhone12,5", "iPhone12,3"]}, {"name": "iOS 13.4.1", "version": "13.4.1", "build": "17E8258", "devices": ["iPhone12,8"]}, {"name": "iOS 13.5.1", "version": "13.5.1", "build": "17F80", "devices": ["iPhone12,8"]}, {"name": "iOS 13.6.1", "version": "13.6.1", "build": "17G80", "devices": ["iPhone12,8"]}, {"name": "iOS 13.7", "version": "13.7", "build": "17H35", "devices": ["iPhone12,8"]}, {"name": "iOS 14.0.1", "version": "14.0.1", "build": "18A393", "devices": ["iPhone12,8"]}, {"name": "iOS 14.1", "version": "14.1", "build": "18A8395", "devices": ["iPhone13,3"]}, {"name": "iOS 14.2.1", "version": "14.2.1", "build": "18B121", "devices": ["iPhone13,3"]}, {"name": "iOS 14.3", "version": "14.3", "build": "18C66", "devices": ["iPhone13,3", "iPhone13,2"]}, {"name": "iOS 14.4.2", "version": "14.4.2", "build": "18D70", "devices": ["iPhone13,3", "iPhone13,2"]}, {"name": "iOS 14.5.1", "version": "14.5.1", "build": "18E212", "devices": ["iPhone13,3", "iPhone13,2"]}, {"name": "iOS 14.6", "version": "14.6", "build": "18F72", "devices": ["iPhone13,3", "iPhone13,2"]}, {"name": "iOS 14.7.1", "version": "14.7.1", "build": "18G82", "devices": ["iPhone13,3", "iPhone13,2"]}, {"name": "iOS 14.8", "version": "14.8", "build": "18H17", "devices": ["iPhone13,3", "iPhone13,2"]}, {"name": "iOS 15.1.1", "version": "15.1.1", "build": "19B81", "devices": ["iPhone14,5"]}, {"name": "iOS 15.2.1", "version": "15.2.1", "build": "19C63", "devices": ["iPhone14,5"]}, {"name": "iOS 15.3.1", "version": "15.3.1", "build": "19D52", "devices": ["iPhone14,5"]}, {"name": "iOS 15.4.1", "version": "15.4.1", "build": "19E258", "devices": ["iPhone14,6"]}, {"name": "iOS 15.5", "version": "15.5", "build": "19F77", "devices": ["iPhone14,6"]}, {"name": "iOS 15.6.1", "version": "15.6.1", "build": "19G82", "devices": ["iPhone14,6"]}, {"name": "iOS 15.7.9", "version": "15.7.9", "build": "19H365", "devices": ["iPhone9,4", "iPhone9,2"]}, {"name": "iOS 15.8.4", "version": "15.8.4", "build": "19H390", "devices": ["iPhone9,4", "iPhone9,2"]}, {"name": "iOS 15.8.5", "version": "15.8.5", "build": "19H394", "devices": ["iPhone9,4", "iPhone9,2"]}, {"name": "iOS 16.0.3", "version": "16.0.3", "build": "20A392", "devices": ["iPhone15,3"]}, {"name": "iOS 16.1.2", "version": "16.1.2", "build": "20B110", "devices": ["iPhone15,3"]}, {"name": "iOS 16.2", "version": "16.2", "build": "20C65", "devices": ["iPhone15,3"]}, {"name": "iOS 16.3.1", "version": "16.3.1", "build": "20D67", "devices": ["iPhone15,3"]}, {"name": "iOS 16.4.1", "version": "16.4.1", "build": "20E252", "devices": ["iPhone15,3"]}, {"name": "iOS 16.5.1", "version": "16.5.1", "build": "20F75", "devices": ["iPhone15,3"]}, {"name": "iOS 16.6.1", "version": "16.6.1", "build": "20G81", "devices": ["iPhone15,3"]}, {"name": "iOS 16.7.11", "version": "16.7.11", "build": "20H360", "devices": ["iPhone10,6", "iPhone10,3"]}, {"name": "iOS 16.7.12", "version": "16.7.12", "build": "20H364", "devices": ["iPhone10,6", "iPhone10,3"]}, {"name": "iOS 17.0.3", "version": "17.0.3", "build": "21A360", "devices": ["iPhone16,2"]}, {"name": "iOS 17.1.2", "version": "17.1.2", "build": "21B101", "devices": ["iPhone16,2"]}, {"name": "iOS 17.2.1", "version": "17.2.1", "build": "21C66", "devices": ["iPhone16,2"]}, {"name": "iOS 17.3.1", "version": "17.3.1", "build": "21D61", "devices": ["iPhone16,2"]}, {"name": "iOS 17.4.1", "version": "17.4.1", "build": "21E236", "devices": ["iPhone16,2"]}, {"name": "iOS 17.5.1", "version": "17.5.1", "build": "21F90", "devices": ["iPhone16,2"]}, {"name": "iOS 17.6.1", "version": "17.6.1", "build": "21G93", "devices": ["iPhone16,2"]}, {"name": "iOS 17.7", "version": "17.7", "build": "21H16", "devices": ["iPhone16,2"]}, {"name": "iOS 18.0.1", "version": "18.0.1", "build": "22A3370", "devices": ["iPhone17,1"]}, {"name": "iOS 18.1.1", "version": "18.1.1", "build": "22B91", "devices": ["iPhone17,1"]}, {"name": "iOS 18.2.1", "version": "18.2.1", "build": "22C161", "devices": ["iPhone17,1"]}, {"name": "iOS 18.3.2", "version": "18.3.2", "build": "22D8082", "devices": ["iPhone17,5"]}, {"name": "iOS 18.4.1", "version": "18.4.1", "build": "22E252", "devices": ["iPhone17,5"]}, {"name": "iOS 18.5", "version": "18.5", "build": "22F76", "devices": ["iPhone17,5"]}, {"name": "iOS 18.6.2", "version": "18.6.2", "build": "22G100", "devices": ["iPhone17,5"]}, {"name": "iOS 18.7", "version": "18.7", "build": "22H20", "devices": ["iPhone11,8"]}, {"name": "iOS 2.0.2", "version": "2.0.2", "build": "5C1", "devices": ["iPhone1,2"]}, {"name": "iOS 2.1", "version": "2.1", "build": "5F136", "devices": ["iPhone1,2"]}, {"name": "iOS 2.2.1", "version": "2.2.1", "build": "5H11", "devices": ["iPhone1,2"]}, {"name": "iOS 26.0", "version": "26.0", "build": "23A341", "devices": ["iPhone18,3"]}, {"name": "iOS 3.0.1", "version": "3.0.1", "build": "7A400", "devices": ["iPhone2,1"]}, {"name": "iOS 3.1.3", "version": "3.1.3", "build": "7E18", "devices": ["iPhone2,1"]}, {"name": "iOS 4.0.2", "version": "4.0.2", "build": "8A400", "devices": ["iPhone3,1"]}, {"name": "iOS 4.1", "version": "4.1", "build": "8B117", "devices": ["iPhone3,1"]}, {"name": "iOS 4.2.10", "version": "4.2.10", "build": "8E600", "devices": ["iPhone3,3"]}, {"name": "iOS 4.3.5", "version": "4.3.5", "build": "8L1", "devices": ["iPhone3,1"]}, {"name": "iOS 5.0.1", "version": "5.0.1", "build": "9A405", "devices": ["iPhone4,1"]}, {"name": "iOS 5.1.1", "version": "5.1.1", "build": "9B206", "devices": ["iPhone4,1"]}, {"name": "iOS 6.0.2", "version": "6.0.2", "build": "10A551", "devices": ["iPhone5,2"]}, {"name": "iOS 6.1.6", "version": "6.1.6", "build": "10B500", "devices": ["iPhone2,1"]}, {"name": "iOS 7.0.6", "version": "7.0.6", "build": "11B651", "devices": ["iPhone6,1"]}, {"name": "iOS 7.1.2", "version": "7.1.2", "build": "11D257", "devices": ["iPhone6,1"]}, {"name": "iOS 8.0.2", "version": "8.0.2", "build": "12A405", "devices": ["iPhone7,2"]}, {"name": "iOS 8.1.3", "version": "8.1.3", "build": "12B466", "devices": ["iPhone7,2"]}, {"name": "iOS 8.2", "version": "8.2", "build": "12D508", "devices": ["iPhone7,2"]}, {"name": "iOS 8.3", "version": "8.3", "build": "12F70", "devices": ["iPhone7,2"]}, {"name": "iOS 8.4.1", "version": "8.4.1", "build": "12H321", "devices": ["iPhone7,2"]}, {"name": "iOS 9.0.2", "version": "9.0.2", "build": "13A452", "devices": ["iPhone8,2"]}, {"name": "iOS 9.1", "version": "9.1", "build": "13B143", "devices": ["iPhone8,2"]}, {"name": "iOS 9.2.1", "version": "9.2.1", "build": "13D15", "devices": ["iPhone8,2"]}, {"name": "iOS 9.3.6", "version": "9.3.6", "build": "13G37", "devices": ["iPhone4,1"]}]
+[
+  {
+    "name": "iOS 15.0.2",
+    "version": "15.0.2",
+    "build": "19A404",
+    "devices": [
+      "iPhone14,5"
+    ]
+  },
+  {
+    "name": "iOS 10.0.3",
+    "version": "10.0.3",
+    "build": "14A551",
+    "devices": [
+      "iPhone9,2",
+      "iPhone9,4"
+    ]
+  },
+  {
+    "name": "iOS 10.1.1",
+    "version": "10.1.1",
+    "build": "14B100",
+    "devices": [
+      "iPhone9,4",
+      "iPhone9,2"
+    ]
+  },
+  {
+    "name": "iOS 10.2.1",
+    "version": "10.2.1",
+    "build": "14D27",
+    "devices": [
+      "iPhone9,4",
+      "iPhone9,2"
+    ]
+  },
+  {
+    "name": "iOS 10.3.4",
+    "version": "10.3.4",
+    "build": "14G61",
+    "devices": [
+      "iPhone5,1",
+      "iPhone5,2",
+      "iPhone5,3",
+      "iPhone5,4"
+    ]
+  },
+  {
+    "name": "iOS 11.0.3",
+    "version": "11.0.3",
+    "build": "15A432",
+    "devices": [
+      "iPhone10,5",
+      "iPhone10,2"
+    ]
+  },
+  {
+    "name": "iOS 11.1.2",
+    "version": "11.1.2",
+    "build": "15B202",
+    "devices": [
+      "iPhone10,6",
+      "iPhone10,3"
+    ]
+  },
+  {
+    "name": "iOS 11.2.6",
+    "version": "11.2.6",
+    "build": "15D100",
+    "devices": [
+      "iPhone10,6",
+      "iPhone10,3"
+    ]
+  },
+  {
+    "name": "iOS 11.3.1",
+    "version": "11.3.1",
+    "build": "15E302",
+    "devices": [
+      "iPhone10,6",
+      "iPhone10,3"
+    ]
+  },
+  {
+    "name": "iOS 11.4.1",
+    "version": "11.4.1",
+    "build": "15G77",
+    "devices": [
+      "iPhone10,6",
+      "iPhone10,3"
+    ]
+  },
+  {
+    "name": "iOS 12.0.1",
+    "version": "12.0.1",
+    "build": "16A405",
+    "devices": [
+      "iPhone11,8"
+    ]
+  },
+  {
+    "name": "iOS 12.2",
+    "version": "12.2",
+    "build": "16E227",
+    "devices": [
+      "iPhone11,8"
+    ]
+  },
+  {
+    "name": "iOS 12.3.2",
+    "version": "12.3.2",
+    "build": "16F250",
+    "devices": [
+      "iPhone9,4",
+      "iPhone10,5",
+      "iPhone10,2",
+      "iPhone9,2"
+    ]
+  },
+  {
+    "name": "iOS 12.4.9",
+    "version": "12.4.9",
+    "build": "16H5",
+    "devices": [
+      "iPhone7,2"
+    ]
+  },
+  {
+    "name": "iOS 12.5.7",
+    "version": "12.5.7",
+    "build": "16H81",
+    "devices": [
+      "iPhone7,2"
+    ]
+  },
+  {
+    "name": "iOS 13.0",
+    "version": "13.0",
+    "build": "17A577",
+    "devices": [
+      "iPhone12,5",
+      "iPhone12,3"
+    ]
+  },
+  {
+    "name": "iOS 13.1.3",
+    "version": "13.1.3",
+    "build": "17A878",
+    "devices": [
+      "iPhone12,5",
+      "iPhone12,3"
+    ]
+  },
+  {
+    "name": "iOS 13.2.3",
+    "version": "13.2.3",
+    "build": "17B111",
+    "devices": [
+      "iPhone12,5",
+      "iPhone12,3"
+    ]
+  },
+  {
+    "name": "iOS 13.3.1",
+    "version": "13.3.1",
+    "build": "17D50",
+    "devices": [
+      "iPhone11,6",
+      "iPhone11,4",
+      "iPhone11,2",
+      "iPhone12,5",
+      "iPhone12,3"
+    ]
+  },
+  {
+    "name": "iOS 13.4.1",
+    "version": "13.4.1",
+    "build": "17E8258",
+    "devices": [
+      "iPhone12,8"
+    ]
+  },
+  {
+    "name": "iOS 13.5.1",
+    "version": "13.5.1",
+    "build": "17F80",
+    "devices": [
+      "iPhone12,8"
+    ]
+  },
+  {
+    "name": "iOS 13.6.1",
+    "version": "13.6.1",
+    "build": "17G80",
+    "devices": [
+      "iPhone12,8"
+    ]
+  },
+  {
+    "name": "iOS 13.7",
+    "version": "13.7",
+    "build": "17H35",
+    "devices": [
+      "iPhone12,8"
+    ]
+  },
+  {
+    "name": "iOS 14.0.1",
+    "version": "14.0.1",
+    "build": "18A393",
+    "devices": [
+      "iPhone12,8"
+    ]
+  },
+  {
+    "name": "iOS 14.1",
+    "version": "14.1",
+    "build": "18A8395",
+    "devices": [
+      "iPhone13,3"
+    ]
+  },
+  {
+    "name": "iOS 14.2.1",
+    "version": "14.2.1",
+    "build": "18B121",
+    "devices": [
+      "iPhone13,3"
+    ]
+  },
+  {
+    "name": "iOS 14.3",
+    "version": "14.3",
+    "build": "18C66",
+    "devices": [
+      "iPhone13,3",
+      "iPhone13,2"
+    ]
+  },
+  {
+    "name": "iOS 14.4.2",
+    "version": "14.4.2",
+    "build": "18D70",
+    "devices": [
+      "iPhone13,3",
+      "iPhone13,2"
+    ]
+  },
+  {
+    "name": "iOS 14.5.1",
+    "version": "14.5.1",
+    "build": "18E212",
+    "devices": [
+      "iPhone13,3",
+      "iPhone13,2"
+    ]
+  },
+  {
+    "name": "iOS 14.6",
+    "version": "14.6",
+    "build": "18F72",
+    "devices": [
+      "iPhone13,3",
+      "iPhone13,2"
+    ]
+  },
+  {
+    "name": "iOS 14.7.1",
+    "version": "14.7.1",
+    "build": "18G82",
+    "devices": [
+      "iPhone13,3",
+      "iPhone13,2"
+    ]
+  },
+  {
+    "name": "iOS 14.8",
+    "version": "14.8",
+    "build": "18H17",
+    "devices": [
+      "iPhone13,3",
+      "iPhone13,2"
+    ]
+  },
+  {
+    "name": "iOS 15.1.1",
+    "version": "15.1.1",
+    "build": "19B81",
+    "devices": [
+      "iPhone14,5"
+    ]
+  },
+  {
+    "name": "iOS 15.2.1",
+    "version": "15.2.1",
+    "build": "19C63",
+    "devices": [
+      "iPhone14,5"
+    ]
+  },
+  {
+    "name": "iOS 15.3.1",
+    "version": "15.3.1",
+    "build": "19D52",
+    "devices": [
+      "iPhone14,5"
+    ]
+  },
+  {
+    "name": "iOS 15.4.1",
+    "version": "15.4.1",
+    "build": "19E258",
+    "devices": [
+      "iPhone14,6"
+    ]
+  },
+  {
+    "name": "iOS 15.5",
+    "version": "15.5",
+    "build": "19F77",
+    "devices": [
+      "iPhone14,6"
+    ]
+  },
+  {
+    "name": "iOS 15.6.1",
+    "version": "15.6.1",
+    "build": "19G82",
+    "devices": [
+      "iPhone14,6"
+    ]
+  },
+  {
+    "name": "iOS 15.7.9",
+    "version": "15.7.9",
+    "build": "19H365",
+    "devices": [
+      "iPhone9,4",
+      "iPhone9,2"
+    ]
+  },
+  {
+    "name": "iOS 15.8.4",
+    "version": "15.8.4",
+    "build": "19H390",
+    "devices": [
+      "iPhone9,4",
+      "iPhone9,2"
+    ]
+  },
+  {
+    "name": "iOS 15.8.5",
+    "version": "15.8.5",
+    "build": "19H394",
+    "devices": [
+      "iPhone9,4",
+      "iPhone9,2"
+    ]
+  },
+  {
+    "name": "iOS 16.0.3",
+    "version": "16.0.3",
+    "build": "20A392",
+    "devices": [
+      "iPhone15,3"
+    ]
+  },
+  {
+    "name": "iOS 16.1.2",
+    "version": "16.1.2",
+    "build": "20B110",
+    "devices": [
+      "iPhone15,3"
+    ]
+  },
+  {
+    "name": "iOS 16.2",
+    "version": "16.2",
+    "build": "20C65",
+    "devices": [
+      "iPhone15,3"
+    ]
+  },
+  {
+    "name": "iOS 16.3.1",
+    "version": "16.3.1",
+    "build": "20D67",
+    "devices": [
+      "iPhone15,3"
+    ]
+  },
+  {
+    "name": "iOS 16.4.1",
+    "version": "16.4.1",
+    "build": "20E252",
+    "devices": [
+      "iPhone15,3"
+    ]
+  },
+  {
+    "name": "iOS 16.5.1",
+    "version": "16.5.1",
+    "build": "20F75",
+    "devices": [
+      "iPhone15,3"
+    ]
+  },
+  {
+    "name": "iOS 16.6.1",
+    "version": "16.6.1",
+    "build": "20G81",
+    "devices": [
+      "iPhone15,3"
+    ]
+  },
+  {
+    "name": "iOS 16.7.11",
+    "version": "16.7.11",
+    "build": "20H360",
+    "devices": [
+      "iPhone10,6",
+      "iPhone10,3"
+    ]
+  },
+  {
+    "name": "iOS 16.7.12",
+    "version": "16.7.12",
+    "build": "20H364",
+    "devices": [
+      "iPhone10,6",
+      "iPhone10,3"
+    ]
+  },
+  {
+    "name": "iOS 17.0.3",
+    "version": "17.0.3",
+    "build": "21A360",
+    "devices": [
+      "iPhone16,2"
+    ]
+  },
+  {
+    "name": "iOS 17.1.2",
+    "version": "17.1.2",
+    "build": "21B101",
+    "devices": [
+      "iPhone16,2"
+    ]
+  },
+  {
+    "name": "iOS 17.2.1",
+    "version": "17.2.1",
+    "build": "21C66",
+    "devices": [
+      "iPhone16,2"
+    ]
+  },
+  {
+    "name": "iOS 17.3.1",
+    "version": "17.3.1",
+    "build": "21D61",
+    "devices": [
+      "iPhone16,2"
+    ]
+  },
+  {
+    "name": "iOS 17.4.1",
+    "version": "17.4.1",
+    "build": "21E236",
+    "devices": [
+      "iPhone16,2"
+    ]
+  },
+  {
+    "name": "iOS 17.5.1",
+    "version": "17.5.1",
+    "build": "21F90",
+    "devices": [
+      "iPhone16,2"
+    ]
+  },
+  {
+    "name": "iOS 17.6.1",
+    "version": "17.6.1",
+    "build": "21G93",
+    "devices": [
+      "iPhone16,2"
+    ]
+  },
+  {
+    "name": "iOS 17.7",
+    "version": "17.7",
+    "build": "21H16",
+    "devices": [
+      "iPhone16,2"
+    ]
+  },
+  {
+    "name": "iOS 18.0.1",
+    "version": "18.0.1",
+    "build": "22A3370",
+    "devices": [
+      "iPhone17,1"
+    ]
+  },
+  {
+    "name": "iOS 18.1.1",
+    "version": "18.1.1",
+    "build": "22B91",
+    "devices": [
+      "iPhone17,1"
+    ]
+  },
+  {
+    "name": "iOS 18.2.1",
+    "version": "18.2.1",
+    "build": "22C161",
+    "devices": [
+      "iPhone17,1"
+    ]
+  },
+  {
+    "name": "iOS 18.3.2",
+    "version": "18.3.2",
+    "build": "22D8082",
+    "devices": [
+      "iPhone17,5"
+    ]
+  },
+  {
+    "name": "iOS 18.4.1",
+    "version": "18.4.1",
+    "build": "22E252",
+    "devices": [
+      "iPhone17,5"
+    ]
+  },
+  {
+    "name": "iOS 18.5",
+    "version": "18.5",
+    "build": "22F76",
+    "devices": [
+      "iPhone17,5"
+    ]
+  },
+  {
+    "name": "iOS 18.6.2",
+    "version": "18.6.2",
+    "build": "22G100",
+    "devices": [
+      "iPhone17,5"
+    ]
+  },
+  {
+    "name": "iOS 18.7",
+    "version": "18.7",
+    "build": "22H20",
+    "devices": [
+      "iPhone11,8"
+    ]
+  },
+  {
+    "name": "iOS 2.0.2",
+    "version": "2.0.2",
+    "build": "5C1",
+    "devices": [
+      "iPhone1,2"
+    ]
+  },
+  {
+    "name": "iOS 2.1",
+    "version": "2.1",
+    "build": "5F136",
+    "devices": [
+      "iPhone1,2"
+    ]
+  },
+  {
+    "name": "iOS 2.2.1",
+    "version": "2.2.1",
+    "build": "5H11",
+    "devices": [
+      "iPhone1,2"
+    ]
+  },
+  {
+    "name": "iOS 26.0",
+    "version": "26.0",
+    "build": "23A341",
+    "devices": [
+      "iPhone18,3"
+    ]
+  },
+  {
+    "name": "iOS 3.0.1",
+    "version": "3.0.1",
+    "build": "7A400",
+    "devices": [
+      "iPhone2,1"
+    ]
+  },
+  {
+    "name": "iOS 3.1.3",
+    "version": "3.1.3",
+    "build": "7E18",
+    "devices": [
+      "iPhone2,1"
+    ]
+  },
+  {
+    "name": "iOS 4.0.2",
+    "version": "4.0.2",
+    "build": "8A400",
+    "devices": [
+      "iPhone3,1"
+    ]
+  },
+  {
+    "name": "iOS 4.1",
+    "version": "4.1",
+    "build": "8B117",
+    "devices": [
+      "iPhone3,1"
+    ]
+  },
+  {
+    "name": "iOS 4.2.10",
+    "version": "4.2.10",
+    "build": "8E600",
+    "devices": [
+      "iPhone3,3"
+    ]
+  },
+  {
+    "name": "iOS 4.3.5",
+    "version": "4.3.5",
+    "build": "8L1",
+    "devices": [
+      "iPhone3,1"
+    ]
+  },
+  {
+    "name": "iOS 5.0.1",
+    "version": "5.0.1",
+    "build": "9A405",
+    "devices": [
+      "iPhone4,1"
+    ]
+  },
+  {
+    "name": "iOS 5.1.1",
+    "version": "5.1.1",
+    "build": "9B206",
+    "devices": [
+      "iPhone4,1"
+    ]
+  },
+  {
+    "name": "iOS 6.0.2",
+    "version": "6.0.2",
+    "build": "10A551",
+    "devices": [
+      "iPhone5,2"
+    ]
+  },
+  {
+    "name": "iOS 6.1.6",
+    "version": "6.1.6",
+    "build": "10B500",
+    "devices": [
+      "iPhone2,1"
+    ]
+  },
+  {
+    "name": "iOS 7.0.6",
+    "version": "7.0.6",
+    "build": "11B651",
+    "devices": [
+      "iPhone6,1"
+    ]
+  },
+  {
+    "name": "iOS 7.1.2",
+    "version": "7.1.2",
+    "build": "11D257",
+    "devices": [
+      "iPhone6,1"
+    ]
+  },
+  {
+    "name": "iOS 8.0.2",
+    "version": "8.0.2",
+    "build": "12A405",
+    "devices": [
+      "iPhone7,2"
+    ]
+  },
+  {
+    "name": "iOS 8.1.3",
+    "version": "8.1.3",
+    "build": "12B466",
+    "devices": [
+      "iPhone7,2"
+    ]
+  },
+  {
+    "name": "iOS 8.2",
+    "version": "8.2",
+    "build": "12D508",
+    "devices": [
+      "iPhone7,2"
+    ]
+  },
+  {
+    "name": "iOS 8.3",
+    "version": "8.3",
+    "build": "12F70",
+    "devices": [
+      "iPhone7,2"
+    ]
+  },
+  {
+    "name": "iOS 8.4.1",
+    "version": "8.4.1",
+    "build": "12H321",
+    "devices": [
+      "iPhone7,2"
+    ]
+  },
+  {
+    "name": "iOS 9.0.2",
+    "version": "9.0.2",
+    "build": "13A452",
+    "devices": [
+      "iPhone8,2"
+    ]
+  },
+  {
+    "name": "iOS 9.1",
+    "version": "9.1",
+    "build": "13B143",
+    "devices": [
+      "iPhone8,2"
+    ]
+  },
+  {
+    "name": "iOS 9.2.1",
+    "version": "9.2.1",
+    "build": "13D15",
+    "devices": [
+      "iPhone8,2"
+    ]
+  },
+  {
+    "name": "iOS 9.3.6",
+    "version": "9.3.6",
+    "build": "13G37",
+    "devices": [
+      "iPhone4,1"
+    ]
+  },
+  {
+    "name": "iOS 18.7.7",
+    "version": "18.7.7",
+    "build": "22H333",
+    "devices": [
+      "iPhone11,8"
+    ]
+  }
+]
