@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Build SQLite database and static KV files from the raw XML data repo.
 
-Supports incremental builds: pass --previous to reuse KV files from a prior
-release, only rebuilding versions that are new or missing.
+Supports incremental builds: pass --previous to reuse KV files and SQLite data
+from a prior release, only importing new OS build folders and purging OS builds
+that were removed from the repo.
 
 Produces:
     output/
@@ -48,6 +49,50 @@ def find_existing_versions(previous: Path) -> set[str]:
     return existing
 
 
+def load_group_os_list(repo_root: Path, group: str) -> list[dict]:
+    group_dir = repo_root / group
+    list_path = group_dir / "list.json"
+
+    if list_path.exists():
+        with list_path.open() as f:
+            return json.load(f)
+
+    os_list = []
+    for d in sorted(group_dir.iterdir()):
+        meta = d / "meta.json"
+        if meta.exists():
+            with meta.open() as f:
+                os_list.append(json.load(f))
+    return os_list
+
+
+def expected_os_keys(repo_root: Path, groups: list[str]) -> set[tuple[str, str, str]]:
+    keys = set()
+
+    for group in groups:
+        group_dir = repo_root / group
+        if not group_dir.exists():
+            continue
+
+        for os_info in load_group_os_list(repo_root, group):
+            version_dir = group_dir / f"{os_info['version']}_{os_info['build']}"
+            if not version_dir.exists():
+                continue
+
+            keys.add((os_info["name"], os_info["version"], os_info["build"]))
+
+    return keys
+
+
+def restore_previous_db(previous: Path, db_path: Path) -> bool:
+    previous_db = previous / "ent.db"
+    if not previous_db.exists():
+        return False
+
+    shutil.copy2(previous_db, db_path)
+    return True
+
+
 def build_kv_for_version(reader: Reader, osid: int, subdir: Path):
     subdir.mkdir(parents=True, exist_ok=True)
 
@@ -82,7 +127,7 @@ def main():
     output = Path(args.output)
     output.mkdir(parents=True, exist_ok=True)
 
-    db_path = str(output / "ent.db")
+    db_path = output / "ent.db"
 
     groups_path = repo_root / "groups.json"
     if groups_path.exists():
@@ -94,20 +139,31 @@ def main():
     existing = set()
     if args.previous:
         previous = Path(args.previous)
+        if restore_previous_db(previous, db_path):
+            print("Restored SQLite database from previous build")
         existing = find_existing_versions(previous)
         if existing:
             print(f"Found {len(existing)} existing versions from previous build")
 
+    current_os_keys = expected_os_keys(repo_root, groups)
+
     print("=== Building SQLite database ===")
+    imported_counts: dict[str, int] = {}
     for group in groups:
         group_dir = repo_root / group
         if not group_dir.exists():
             continue
         print(f"Importing group: {group}")
-        import_data_repo(repo_root, db_path, group)
+        imported_counts.update(import_data_repo(repo_root, str(db_path), group))
+
+    reader = Reader(str(db_path))
+    removed = reader.purge_missing_os(current_os_keys)
+    for os_info in removed:
+        print(
+            f"Removed stale OS: {os_info['name']} {os_info['version']} {os_info['build']}"
+        )
 
     print("\n=== Exporting static KV files ===")
-    reader = Reader(db_path)
 
     all_os = reader.all_os()
     group_builds: dict[str, list[dict]] = {g: [] for g in groups}
@@ -136,8 +192,9 @@ def main():
             tag = f"{os_info['version']}_{build}"
             version_key = f"{group}/{tag}"
             subdir = group_out / tag
+            new_rows = imported_counts.get(version_key, 0)
 
-            if version_key in existing and args.previous:
+            if version_key in existing and args.previous and new_rows == 0:
                 src = Path(args.previous) / group / tag
                 if src.exists():
                     shutil.copytree(src, subdir, dirs_exist_ok=True)

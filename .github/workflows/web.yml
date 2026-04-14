@@ -1,9 +1,8 @@
 name: Trigger Web Build
 
 on:
-  workflow_run:
-    workflows: ["Build and Release Data"]
-    types: [completed]
+  release:
+    types: [published]
   workflow_dispatch:
 
 permissions:
@@ -16,7 +15,7 @@ env:
 
 jobs:
   dispatch:
-    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event_name == 'release' }}
     runs-on: ubuntu-latest
     steps:
       - name: Trigger web repository build
@@ -26,5 +25,6 @@ jobs:
           gh api "repos/${WEB_REPO_OWNER}/${WEB_REPO_NAME}/dispatches" \
             -f event_type="${DISPATCH_EVENT_TYPE}" \
             -f client_payload[source_repo]="${GITHUB_REPOSITORY}" \
-            -f client_payload[source_sha]="${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || github.sha }}" \
-            -f client_payload[source_ref]="${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_branch || github.ref_name }}"
+            -f client_payload[source_sha]="${{ github.event_name == 'release' && github.event.release.target_commitish || github.sha }}" \
+            -f client_payload[source_ref]="${{ github.event_name == 'release' && github.event.release.target_commitish || github.ref_name }}" \
+            -f client_payload[source_release_tag]="${{ github.event_name == 'release' && github.event.release.tag_name || '' }}"

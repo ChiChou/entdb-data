@@ -14,6 +14,9 @@ def import_xml_dir(
     devices: list[str] | None = None,
 ) -> int:
     writer = Writer(db_path, name, build, version, devices)
+    if writer.os_exists:
+        return 0
+
     bin_dir = xml_dir / "bin"
     count = 0
 
@@ -33,18 +36,18 @@ def import_xml_dir(
             continue
 
         xml = xml_path.read_bytes()
-        writer.insert(line, xml)
-        count += 1
+        if writer.insert(line, xml):
+            count += 1
 
     return count
 
 
-def import_data_repo(data_repo: Path, db_path: str, group: str) -> int:
+def import_data_repo(data_repo: Path, db_path: str, group: str) -> dict[str, int]:
     import json
 
     group_dir = data_repo / group
     list_path = group_dir / "list.json"
-    total = 0
+    counts: dict[str, int] = {}
 
     if list_path.exists():
         with list_path.open() as f:
@@ -70,10 +73,10 @@ def import_data_repo(data_repo: Path, db_path: str, group: str) -> int:
             os_info["build"],
             os_info.get("devices"),
         )
-        total += count
+        counts[f"{group}/{version_dir.name}"] = count
         print(f"  {version_dir.name}: {count} binaries")
 
-    return total
+    return counts
 
 
 def main():

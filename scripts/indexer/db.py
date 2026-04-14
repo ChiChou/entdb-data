@@ -17,9 +17,10 @@ class Writer:
         self.path = path
         self.devices = devices or []
         self.conn = sqlite3.connect(self.path)
+        self._existing_paths: set[str] | None = None
 
         self.create_tables()
-        self.osid = self._insert_os(name, version, build)
+        self.osid, self.os_exists = self._insert_os(name, version, build)
 
     def create_tables(self):
         sql_file = Path(__file__).parent / "schema.sql"
@@ -30,7 +31,7 @@ class Writer:
         self.conn.executescript(sql_script)
         self.conn.commit()
 
-    def _insert_os(self, name: str, version: str, build: str) -> int:
+    def _insert_os(self, name: str, version: str, build: str) -> tuple[int, bool]:
         cursor = self.conn.execute(
             "SELECT id FROM os WHERE name=? AND version=? AND build=?",
             (name, version, build),
@@ -38,7 +39,7 @@ class Writer:
         row = cursor.fetchone()
         if row:
             osid, *_ = row
-            return osid
+            return osid, True
 
         cursor = self.conn.execute(
             "INSERT INTO os (name, version, build, devices) VALUES (?, ?, ?, ?)",
@@ -47,11 +48,23 @@ class Writer:
         self.conn.commit()
         osid = cursor.lastrowid
         assert osid is not None, "Failed to insert OS entry"
-        return osid
+        return osid, False
 
-    def insert(self, path: str, xml: bytes):
+    def existing_paths(self) -> set[str]:
+        if self._existing_paths is None:
+            cursor = self.conn.execute(
+                "SELECT path FROM bin WHERE osid=?",
+                (self.osid,),
+            )
+            self._existing_paths = {row[0] for row in cursor.fetchall()}
+        return self._existing_paths
+
+    def insert(self, path: str, xml: bytes) -> bool:
         if not len(xml):
-            return
+            return False
+
+        if path in self.existing_paths():
+            return False
 
         d = plistlib.loads(xml)
 
@@ -70,6 +83,8 @@ class Writer:
             )
 
         self.conn.commit()
+        self.existing_paths().add(path)
+        return True
 
 
 class Reader:
@@ -89,6 +104,33 @@ class Reader:
             )
             for osid, name, version, build, devices in cursor.fetchall()
         ]
+
+    def purge_missing_os(self, expected_keys: set[tuple[str, str, str]]) -> list[dict]:
+        removed = []
+
+        for os_info in self.all_os():
+            os_key = (os_info["name"], os_info["version"], os_info["build"])
+            if os_key in expected_keys:
+                continue
+
+            self.conn.execute(
+                "DELETE FROM pair WHERE binid IN (SELECT id FROM bin WHERE osid=?)",
+                (os_info["id"],),
+            )
+            self.conn.execute(
+                "DELETE FROM bin WHERE osid=?",
+                (os_info["id"],),
+            )
+            self.conn.execute(
+                "DELETE FROM os WHERE id=?",
+                (os_info["id"],),
+            )
+            removed.append(os_info)
+
+        if removed:
+            self.conn.commit()
+
+        return removed
 
     def paths_by_osid(self, osid: int) -> list[str]:
         cursor = self.conn.execute(

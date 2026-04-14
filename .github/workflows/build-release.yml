@@ -3,10 +3,13 @@ name: Build and Release Data
 on:
   push:
     branches: [main]
-    paths-ignore:
-      - ".github/**"
+    paths:
+      - "groups.json"
+      - "iOS/**"
+      - "mac/**"
+      - "osx/**"
       - "scripts/**"
-      - "README.md"
+      - ".github/workflows/build-release.yml"
 
   workflow_dispatch:
 
@@ -31,7 +34,7 @@ jobs:
         id: previous
         run: |
           mkdir -p previous
-          if gh release download --pattern "data.tar.gz" -D previous 2>/dev/null; then
+          if gh release download --pattern "data.tar.gz" --pattern "ent.db" -D previous 2>/dev/null; then
             cd previous && tar -xzf data.tar.gz && rm data.tar.gz
             echo "found=true" >> "$GITHUB_OUTPUT"
           else
