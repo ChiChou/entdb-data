@@ -1,1 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "https://www.apple.com/DTDs/PropertyList-1.0.dtd"><plist version="1.0"><dict><key>application-identifier</key><string>com.apple.smbd</string><key>com.apple.private.security.clear-library-validation</key><true/><key>com.apple.private.vfs.filesec-access</key><true/></dict></plist>
