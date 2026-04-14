@@ -1,0 +1,33 @@
+name: Trigger Web Build
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "groups.json"
+      - "iOS/**"
+      - "mac/**"
+      # - "osx/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  WEB_REPO_OWNER: ChiChou
+  WEB_REPO_NAME: entdb-web
+  DISPATCH_EVENT_TYPE: data-updated
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger web repository build
+        env:
+          GH_TOKEN: ${{ secrets.ENTDB_WEB_PAT }}
+        run: |
+          gh api "repos/${WEB_REPO_OWNER}/${WEB_REPO_NAME}/dispatches" \
+            -f event_type="${DISPATCH_EVENT_TYPE}" \
+            -f client_payload[source_repo]="${GITHUB_REPOSITORY}" \
+            -f client_payload[source_sha]="${GITHUB_SHA}" \
+            -f client_payload[source_ref]="${GITHUB_REF_NAME}"
