@@ -10,7 +10,7 @@ permissions:
 
 env:
   WEB_REPO_OWNER: ChiChou
-  WEB_REPO_NAME: entdb-web
+  WEB_REPO_NAME: entdb
   DISPATCH_EVENT_TYPE: data-updated
 
 jobs:
