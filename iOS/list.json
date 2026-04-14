@@ -774,5 +774,13 @@
     "devices": [
       "iPhone18,3"
     ]
+  },
+  {
+    "name": "iOS 26.1",
+    "version": "26.1",
+    "build": "23B85",
+    "devices": [
+      "iPhone18,3"
+    ]
   }
 ]
