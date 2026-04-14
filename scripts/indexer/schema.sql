@@ -1,9 +1,10 @@
 CREATE TABLE IF NOT EXISTS "os" (
     "id" INTEGER NOT NULL PRIMARY KEY,
     "name" VARCHAR(32) NOT NULL,
-    "build" VARCHAR(32) NOT NULL UNIQUE,
+    "build" VARCHAR(32) NOT NULL,
     "devices" TEXT,
-    "version" VARCHAR(32) NOT NULL);
+    "version" VARCHAR(32) NOT NULL,
+    UNIQUE("name", "build"));
 
 CREATE TABLE IF NOT EXISTS "bin" (
     "id" INTEGER NOT NULL PRIMARY KEY,
