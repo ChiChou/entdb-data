@@ -32,27 +32,9 @@ jobs:
         with:
           python-version: "3.13"
 
-      - name: Download previous database
-        id: previous
-        run: |
-          mkdir -p previous
-          if gh release download --pattern "ent.db" -D previous 2>/dev/null; then
-            echo "found=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "No previous release found, doing full build"
-            echo "found=false" >> "$GITHUB_OUTPUT"
-          fi
-        env:
-          GH_TOKEN: ${{ github.token }}
-
       - name: Build artifacts
         timeout-minutes: 50
-        run: |
-          ARGS="-o build-output"
-          if [ "${{ steps.previous.outputs.found }}" = "true" ]; then
-            ARGS="$ARGS --previous previous"
-          fi
-          python -u scripts/build.py $ARGS
+        run: python -u scripts/build.py -o build-output
 
       - name: Create release
         run: |
