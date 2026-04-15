@@ -992,7 +992,7 @@
     ]
   },
   {
-    "name": "macOS 26.0",
+    "name": "macOS Tahoe",
     "version": "26.0",
     "build": "25A354",
     "devices": [
@@ -1114,7 +1114,7 @@
     ]
   },
   {
-    "name": "macOS 26.4",
+    "name": "macOS Tahoe",
     "version": "26.4.1",
     "build": "25E253",
     "devices": [
@@ -1177,7 +1177,7 @@
     ]
   },
   {
-    "name": "macOS 26.3",
+    "name": "macOS Tahoe",
     "version": "26.3.2",
     "build": "25D2140",
     "devices": [
@@ -1240,7 +1240,7 @@
     ]
   },
   {
-    "name": "macOS 26.2",
+    "name": "macOS Tahoe",
     "version": "26.2",
     "build": "25C56",
     "devices": [
@@ -1296,7 +1296,7 @@
     ]
   },
   {
-    "name": "macOS 26.1",
+    "name": "macOS Tahoe",
     "version": "26.1",
     "build": "25B78",
     "devices": [
@@ -1352,7 +1352,7 @@
     ]
   },
   {
-    "name": "macOS 26.0",
+    "name": "macOS Tahoe",
     "version": "26.0.1",
     "build": "25A8364",
     "devices": [
