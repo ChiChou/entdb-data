@@ -36,9 +36,13 @@ jobs:
         id: previous
         run: |
           mkdir -p previous
-          if gh release download --pattern "ent.db" --pattern "kv.tar.gz" -D previous 2>/dev/null; then
+          gh release download --pattern "ent.db" -D previous 2>/dev/null || true
+          gh release download --pattern "kv.tar.gz" -D previous 2>/dev/null || true
+          if [ -f previous/kv.tar.gz ]; then
             tar -xzf previous/kv.tar.gz -C previous
             rm previous/kv.tar.gz
+          fi
+          if [ -f previous/ent.db ]; then
             echo "found=true" >> "$GITHUB_OUTPUT"
           else
             echo "found=false" >> "$GITHUB_OUTPUT"
