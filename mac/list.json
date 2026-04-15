@@ -1749,5 +1749,16 @@
       "Mac14,7",
       "Mac14,6"
     ]
+  },
+  {
+    "name": "macOS Ventura",
+    "version": "13.4.1",
+    "build": "22F2083",
+    "devices": [
+      "Mac14,15",
+      "Mac14,8",
+      "Mac14,13",
+      "Mac14,14"
+    ]
   }
 ]
