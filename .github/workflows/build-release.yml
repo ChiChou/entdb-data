@@ -32,12 +32,11 @@ jobs:
         with:
           python-version: "3.13"
 
-      - name: Download previous release
+      - name: Download previous database
         id: previous
         run: |
           mkdir -p previous
-          if gh release download --pattern "data.tar.gz" --pattern "ent.db" -D previous 2>/dev/null; then
-            cd previous && tar -xzf data.tar.gz && rm data.tar.gz
+          if gh release download --pattern "ent.db" -D previous 2>/dev/null; then
             echo "found=true" >> "$GITHUB_OUTPUT"
           else
             echo "No previous release found, doing full build"
@@ -46,7 +45,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
 
-      - name: Build artifacts (incremental)
+      - name: Build artifacts
         timeout-minutes: 50
         run: |
           ARGS="-o build-output"
@@ -54,12 +53,6 @@ jobs:
             ARGS="$ARGS --previous previous"
           fi
           python -u scripts/build.py $ARGS
-
-      - name: Package artifacts
-        run: |
-          cd build-output
-          tar -czf ../data.tar.gz --exclude=ent.db .
-          cp ent.db ../ent.db
 
       - name: Create release
         run: |
@@ -72,11 +65,12 @@ jobs:
             TAG="${TAG}-${SEQ}"
           fi
 
+          cp build-output/ent.db ent.db
           gh release create "$TAG" \
             --title "Data Build $TAG" \
             --notes "Auto-built from latest data." \
             --latest \
-            data.tar.gz ent.db
+            ent.db
         env:
           GH_TOKEN: ${{ github.token }}
 
