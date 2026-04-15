@@ -1814,5 +1814,26 @@
       "Mac14,7",
       "MacBookPro18,1"
     ]
+  },
+  {
+    "name": "macOS Ventura",
+    "version": "13.0.1",
+    "build": "22A400",
+    "devices": [
+      "iMac21,1",
+      "MacBookAir10,1",
+      "iMac21,2",
+      "VirtualMac2,1",
+      "Macmini9,1",
+      "Mac13,2",
+      "Mac13,1",
+      "MacBookPro17,1",
+      "MacBookPro18,4",
+      "Mac14,2",
+      "MacBookPro18,2",
+      "MacBookPro18,3",
+      "Mac14,7",
+      "MacBookPro18,1"
+    ]
   }
 ]
