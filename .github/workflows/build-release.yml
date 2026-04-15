@@ -32,11 +32,13 @@ jobs:
         with:
           python-version: "3.13"
 
-      - name: Download previous database
+      - name: Download previous build
         id: previous
         run: |
           mkdir -p previous
-          if gh release download --pattern "ent.db" -D previous 2>/dev/null; then
+          if gh release download --pattern "ent.db" --pattern "kv.tar.gz" -D previous 2>/dev/null; then
+            tar -xzf previous/kv.tar.gz -C previous
+            rm previous/kv.tar.gz
             echo "found=true" >> "$GITHUB_OUTPUT"
           else
             echo "found=false" >> "$GITHUB_OUTPUT"
@@ -65,11 +67,12 @@ jobs:
           fi
 
           cp build-output/ent.db ent.db
+          cd build-output && tar -czf ../kv.tar.gz --exclude=ent.db . && cd ..
           gh release create "$TAG" \
             --title "Data Build $TAG" \
             --notes "Auto-built from latest data." \
             --latest \
-            ent.db
+            ent.db kv.tar.gz
         env:
           GH_TOKEN: ${{ github.token }}
 
