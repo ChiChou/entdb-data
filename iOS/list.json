@@ -814,5 +814,13 @@
     "devices": [
       "iPhone18,5"
     ]
+  },
+  {
+    "name": "iOS 18.7.8",
+    "version": "18.7.8",
+    "build": "22H352",
+    "devices": [
+      "iPhone11,8"
+    ]
   }
 ]
