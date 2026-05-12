@@ -822,5 +822,13 @@
     "devices": [
       "iPhone11,8"
     ]
+  },
+  {
+    "name": "iOS 26.5",
+    "version": "26.5",
+    "build": "23F77",
+    "devices": [
+      "iPhone18,5"
+    ]
   }
 ]
