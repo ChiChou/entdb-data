@@ -166,6 +166,16 @@ def main():
     print("\n=== Exporting static KV files ===")
 
     all_os = reader.all_os()
+
+    # The SQLite os table has no beta column, so reader.all_os() drops the
+    # pre-release flag. Re-apply it from the raw list.json/meta.json so the
+    # published data (and the frontend's Beta badge) keep it.
+    beta_keys = set()
+    for group in groups:
+        for raw in load_group_os_list(repo_root, group):
+            if raw.get("beta"):
+                beta_keys.add((group, raw["version"], raw["build"]))
+
     group_builds: dict[str, list[dict]] = {g: [] for g in groups}
 
     for os_info in all_os:
@@ -187,6 +197,8 @@ def main():
         group_out.mkdir(parents=True, exist_ok=True)
 
         for os_info in os_list:
+            if (group, os_info["version"], os_info["build"]) in beta_keys:
+                os_info["beta"] = True
             build = os_info["build"]
             osid = os_info["id"]
             tag = f"{os_info['version']}_{build}"
