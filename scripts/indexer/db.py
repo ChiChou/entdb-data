@@ -30,17 +30,7 @@ class Writer:
             sql_script = fp.read()
 
         self.conn.executescript(sql_script)
-        self._migrate()
         self.conn.commit()
-
-    def _migrate(self):
-        # Databases restored from a previous incremental build predate the beta
-        # column; add it so beta writes/reads succeed.
-        columns = {row[1] for row in self.conn.execute("PRAGMA table_info(os)")}
-        if "beta" not in columns:
-            self.conn.execute(
-                'ALTER TABLE os ADD COLUMN "beta" INTEGER NOT NULL DEFAULT 0'
-            )
 
     def _insert_os(
         self, name: str, version: str, build: str, beta: bool = False
@@ -52,12 +42,6 @@ class Writer:
         row = cursor.fetchone()
         if row:
             osid, *_ = row
-            # Keep the beta flag in sync with the source metadata, so a row
-            # imported by an earlier build (before beta was tracked) is healed.
-            self.conn.execute(
-                "UPDATE os SET beta=? WHERE id=?", (1 if beta else 0, osid)
-            )
-            self.conn.commit()
             return osid, True
 
         cursor = self.conn.execute(
@@ -112,15 +96,11 @@ class Reader:
         self.conn = sqlite3.connect(self.path)
 
     def all_os(self):
-        has_beta = any(
-            row[1] == "beta" for row in self.conn.execute("PRAGMA table_info(os)")
+        cursor = self.conn.execute(
+            "SELECT id, name, version, build, devices, beta FROM os"
         )
-        columns = "id, name, version, build, devices" + (", beta" if has_beta else "")
-        cursor = self.conn.execute(f"SELECT {columns} FROM os")
-
         result = []
-        for row in cursor.fetchall():
-            osid, name, version, build, devices = row[:5]
+        for osid, name, version, build, devices, beta in cursor.fetchall():
             entry = dict(
                 id=osid,
                 name=name,
@@ -128,7 +108,7 @@ class Reader:
                 build=build,
                 devices=json.loads(devices),
             )
-            if has_beta and row[5]:
+            if beta:
                 entry["beta"] = True
             result.append(entry)
         return result
