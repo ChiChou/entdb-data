@@ -12,8 +12,9 @@ def import_xml_dir(
     version: str,
     build: str,
     devices: list[str] | None = None,
+    beta: bool = False,
 ) -> int:
-    writer = Writer(db_path, name, build, version, devices)
+    writer = Writer(db_path, name, build, version, devices, beta)
     if writer.os_exists:
         return 0
 
@@ -72,6 +73,7 @@ def import_data_repo(data_repo: Path, db_path: str, group: str) -> dict[str, int
             os_info["version"],
             os_info["build"],
             os_info.get("devices"),
+            bool(os_info.get("beta")),
         )
         counts[f"{group}/{version_dir.name}"] = count
         print(f"  {version_dir.name}: {count} binaries")

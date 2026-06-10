@@ -13,6 +13,7 @@ class Writer:
         build: str,
         version: str,
         devices: list[str] | None = None,
+        beta: bool = False,
     ):
         self.path = path
         self.devices = devices or []
@@ -20,7 +21,7 @@ class Writer:
         self._existing_paths: set[str] | None = None
 
         self.create_tables()
-        self.osid, self.os_exists = self._insert_os(name, version, build)
+        self.osid, self.os_exists = self._insert_os(name, version, build, beta)
 
     def create_tables(self):
         sql_file = Path(__file__).parent / "schema.sql"
@@ -29,9 +30,21 @@ class Writer:
             sql_script = fp.read()
 
         self.conn.executescript(sql_script)
+        self._migrate()
         self.conn.commit()
 
-    def _insert_os(self, name: str, version: str, build: str) -> tuple[int, bool]:
+    def _migrate(self):
+        # Databases restored from a previous incremental build predate the beta
+        # column; add it so beta writes/reads succeed.
+        columns = {row[1] for row in self.conn.execute("PRAGMA table_info(os)")}
+        if "beta" not in columns:
+            self.conn.execute(
+                'ALTER TABLE os ADD COLUMN "beta" INTEGER NOT NULL DEFAULT 0'
+            )
+
+    def _insert_os(
+        self, name: str, version: str, build: str, beta: bool = False
+    ) -> tuple[int, bool]:
         cursor = self.conn.execute(
             "SELECT id FROM os WHERE name=? AND version=? AND build=?",
             (name, version, build),
@@ -39,11 +52,17 @@ class Writer:
         row = cursor.fetchone()
         if row:
             osid, *_ = row
+            # Keep the beta flag in sync with the source metadata, so a row
+            # imported by an earlier build (before beta was tracked) is healed.
+            self.conn.execute(
+                "UPDATE os SET beta=? WHERE id=?", (1 if beta else 0, osid)
+            )
+            self.conn.commit()
             return osid, True
 
         cursor = self.conn.execute(
-            "INSERT INTO os (name, version, build, devices) VALUES (?, ?, ?, ?)",
-            (name, version, build, json.dumps(self.devices)),
+            "INSERT INTO os (name, version, build, devices, beta) VALUES (?, ?, ?, ?, ?)",
+            (name, version, build, json.dumps(self.devices), 1 if beta else 0),
         )
         self.conn.commit()
         osid = cursor.lastrowid
@@ -93,17 +112,26 @@ class Reader:
         self.conn = sqlite3.connect(self.path)
 
     def all_os(self):
-        cursor = self.conn.execute("SELECT id, name, version, build, devices FROM os")
-        return [
-            dict(
+        has_beta = any(
+            row[1] == "beta" for row in self.conn.execute("PRAGMA table_info(os)")
+        )
+        columns = "id, name, version, build, devices" + (", beta" if has_beta else "")
+        cursor = self.conn.execute(f"SELECT {columns} FROM os")
+
+        result = []
+        for row in cursor.fetchall():
+            osid, name, version, build, devices = row[:5]
+            entry = dict(
                 id=osid,
                 name=name,
                 version=version,
                 build=build,
                 devices=json.loads(devices),
             )
-            for osid, name, version, build, devices in cursor.fetchall()
-        ]
+            if has_beta and row[5]:
+                entry["beta"] = True
+            result.append(entry)
+        return result
 
     def purge_missing_os(self, expected_keys: set[tuple[str, str, str]]) -> list[dict]:
         removed = []
