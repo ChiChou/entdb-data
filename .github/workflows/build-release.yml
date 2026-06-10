@@ -42,12 +42,6 @@ jobs:
             tar -xzf previous/kv.tar.gz -C previous
             rm previous/kv.tar.gz
           fi
-          # Discard a cached DB whose schema predates the beta column so the
-          # build falls back to a clean, full rebuild (no in-place migration).
-          if [ -f previous/ent.db ] && ! python -c "import sqlite3,sys; sys.exit(0 if any(r[1]=='beta' for r in sqlite3.connect('previous/ent.db').execute('PRAGMA table_info(os)')) else 1)"; then
-            echo "Previous build predates the beta schema; forcing a fresh rebuild" >&2
-            rm -rf previous
-          fi
           if [ -f previous/ent.db ]; then
             echo "found=true" >> "$GITHUB_OUTPUT"
           else
