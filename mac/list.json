@@ -2107,7 +2107,7 @@
   {
     "name": "macOS Tahoe",
     "version": "26.6",
-    "build": "25G5028f",
+    "build": "25G5043d",
     "devices": [
       "Mac13,1",
       "Mac13,2",
