@@ -423,15 +423,6 @@
     ]
   },
   {
-    "name": "iOS 16.7.12",
-    "version": "16.7.12",
-    "build": "20H364",
-    "devices": [
-      "iPhone10,6",
-      "iPhone10,3"
-    ]
-  },
-  {
     "name": "iOS 17.0.3",
     "version": "17.0.3",
     "build": "21A360",
@@ -866,5 +857,14 @@
       "iPhone12,5"
     ],
     "beta": true
+  },
+  {
+    "name": "iOS 16.7.16",
+    "version": "16.7.16",
+    "build": "20H392",
+    "devices": [
+      "iPhone10,6",
+      "iPhone10,3"
+    ]
   }
 ]
