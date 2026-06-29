@@ -126,14 +126,6 @@
     ]
   },
   {
-    "name": "iOS 12.5.7",
-    "version": "12.5.7",
-    "build": "16H81",
-    "devices": [
-      "iPhone7,2"
-    ]
-  },
-  {
     "name": "iOS 13.0",
     "version": "13.0",
     "build": "17A577",
@@ -865,6 +857,14 @@
     "devices": [
       "iPhone9,4",
       "iPhone9,2"
+    ]
+  },
+  {
+    "name": "iOS 12.5.8",
+    "version": "12.5.8",
+    "build": "16H88",
+    "devices": [
+      "iPhone7,2"
     ]
   }
 ]
