@@ -814,16 +814,6 @@
     ]
   },
   {
-    "name": "iOS 26.6",
-    "version": "26.6",
-    "build": "23G5043d",
-    "devices": [
-      "iPhone12,3",
-      "iPhone12,5"
-    ],
-    "beta": true
-  },
-  {
     "name": "iOS 27.0",
     "version": "27.0",
     "build": "24A5370h",
@@ -866,5 +856,15 @@
     "devices": [
       "iPhone18,5"
     ]
+  },
+  {
+    "name": "iOS 26.6",
+    "version": "26.6",
+    "build": "23G5052d",
+    "devices": [
+      "iPhone12,3",
+      "iPhone12,5"
+    ],
+    "beta": true
   }
 ]
