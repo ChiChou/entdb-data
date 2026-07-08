@@ -1654,6 +1654,8 @@
 /private/var/staged_system_apps/MobileSMS.app/PlugIns/MessagesTranscriptExtension.appex/MessagesTranscriptExtension
 /private/var/staged_system_apps/MobileSafari.app/Extensions/SafariLinkExtension.appex/SafariLinkExtension
 /private/var/staged_system_apps/MobileSafari.app/MobileSafari
+/private/var/staged_system_apps/MobileSafari.app/PlugIns/SafariActionExtension.appex/SafariActionExtension
+/private/var/staged_system_apps/MobileSafari.app/PlugIns/SafariShareExtension.appex/SafariShareExtension
 /private/var/staged_system_apps/MobileSafari.app/PlugIns/SafariWidgetExtension.appex/SafariWidgetExtension
 /private/var/staged_system_apps/MobileSafari.app/PlugIns/com.apple.mobilesafari.SafariDiagnosticExtension.appex/com.apple.mobilesafari.SafariDiagnosticExtension
 /private/var/staged_system_apps/MobileSafari.app/XPCServices/com.apple.Safari.SandboxBroker.xpc/com.apple.Safari.SandboxBroker
