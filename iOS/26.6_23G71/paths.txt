@@ -1056,7 +1056,6 @@
 /System/Library/PrivateFrameworks/DeviceCheckInternal.framework/devicecheckd
 /System/Library/PrivateFrameworks/DeviceRecovery.framework/Support/devicerecoveryd
 /System/Library/PrivateFrameworks/DeviceRecoveryBrainSupport.framework/XPCServices/com.apple.DeviceRecoveryBuiltinBrain.xpc/com.apple.DeviceRecoveryBuiltinBrain
-/System/Library/PrivateFrameworks/DiagnosticExtensions.framework/PlugIns/AirPlayDiagnosticExtension.appex/AirPlayDiagnosticExtension
 /System/Library/PrivateFrameworks/DiagnosticExtensions.framework/PlugIns/AudioDiagnosticExtension.appex/AudioDiagnosticExtension
 /System/Library/PrivateFrameworks/DiagnosticExtensions.framework/PlugIns/BluetoothDiagnosticExtension.appex/BluetoothDiagnosticExtension
 /System/Library/PrivateFrameworks/DiagnosticExtensions.framework/PlugIns/BluetoothHeadset.appex/BluetoothHeadset
@@ -1952,7 +1951,6 @@
 /usr/libexec/mediaparserd
 /usr/libexec/mediaplaybackd
 /usr/libexec/mediasetupd
-/usr/libexec/memoryanalyticsd
 /usr/libexec/merchantd
 /usr/libexec/meshnetd
 /usr/libexec/metrickitd
