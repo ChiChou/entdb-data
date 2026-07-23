@@ -2041,9 +2041,9 @@
     ]
   },
   {
-    "name": "macOS Golden Gate",
-    "version": "27.0",
-    "build": "26A5378n",
+    "name": "macOS Tahoe",
+    "version": "26.6",
+    "build": "25G5065a",
     "devices": [
       "Mac13,1",
       "Mac13,2",
@@ -2105,9 +2105,9 @@
     "beta": true
   },
   {
-    "name": "macOS Tahoe",
-    "version": "26.6",
-    "build": "25G5065a",
+    "name": "macOS Golden Gate",
+    "version": "27.0",
+    "build": "26A5388g",
     "devices": [
       "Mac13,1",
       "Mac13,2",
