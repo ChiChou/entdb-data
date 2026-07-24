@@ -1962,7 +1962,6 @@
 /usr/libexec/mc_notifier
 /usr/libexec/mdmclient
 /usr/libexec/mediacontinuityd
-/usr/libexec/memoryanalyticsd
 /usr/libexec/metrickitd
 /usr/libexec/micactivityd
 /usr/libexec/microstackshot
