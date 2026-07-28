@@ -2107,7 +2107,7 @@
   {
     "name": "macOS Tahoe",
     "version": "26.6",
-    "build": "25G70",
+    "build": "25G72",
     "devices": [
       "Mac13,1",
       "Mac13,2",
@@ -2165,7 +2165,6 @@
       "VirtualMac2,1",
       "iMac21,1",
       "iMac21,2"
-    ],
-    "beta": true
+    ]
   }
 ]
