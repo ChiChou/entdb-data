@@ -2106,8 +2106,8 @@
   },
   {
     "name": "macOS Tahoe",
-    "version": "26.6",
-    "build": "25G72",
+    "version": "26.6.1",
+    "build": "25G76",
     "devices": [
       "Mac13,1",
       "Mac13,2",
