@@ -52,6 +52,7 @@
 /Applications/Charge.app/Charge
 /Applications/CheckerBoard.app/CheckerBoard
 /Applications/CheckerBoardRemoteSetup.app/CheckerBoardRemoteSetup
+/Applications/CinematicFramingOnboardingUI.app/CinematicFramingOnboardingUI
 /Applications/ClarityCamera.app/ClarityCamera
 /Applications/ClarityPhotos.app/ClarityPhotos
 /Applications/Climate.app/Climate
@@ -317,6 +318,8 @@
 /Applications/TVRemoteUIService.app/PlugIns/TVRemoteWidgetExtension.appex/TVRemoteWidgetExtension
 /Applications/TVRemoteUIService.app/TVRemoteUIService
 /Applications/TVSetupUIService.app/TVSetupUIService
+/Applications/Tamale.app/PlugIns/DiagnosticExtension.appex/DiagnosticExtension
+/Applications/Tamale.app/Tamale
 /Applications/Text Message Filter.app/PlugIns/extensionFilter.appex/extensionFilter
 /Applications/Text Message Filter.app/Text Message Filter
 /Applications/TirePressure.app/TirePressure
@@ -500,6 +503,8 @@
 /System/Library/ExtensionKit/Extensions/FontIntents.appex/FontIntents
 /System/Library/ExtensionKit/Extensions/FontThumbnailExtension.appex/FontThumbnailExtension
 /System/Library/ExtensionKit/Extensions/GMSSELFIngestor.appex/GMSSELFIngestor
+/System/Library/ExtensionKit/Extensions/GPNonUIExtension.appex/GPNonUIExtension
+/System/Library/ExtensionKit/Extensions/GPUIExtension.appex/GPUIExtension
 /System/Library/ExtensionKit/Extensions/GameCenterMessageExtension.appex/GameCenterMessageExtension
 /System/Library/ExtensionKit/Extensions/GameCenterSettingsDeviceExpertExtension.appex/GameCenterSettingsDeviceExpertExtension
 /System/Library/ExtensionKit/Extensions/GeneralSettingsIntents.appex/GeneralSettingsIntents
@@ -659,6 +664,7 @@
 /System/Library/ExtensionKit/Extensions/Vermillion.appex/Vermillion
 /System/Library/ExtensionKit/Extensions/VideosUIEngagementExtension.appex/VideosUIEngagementExtension
 /System/Library/ExtensionKit/Extensions/VisualGenerationInference.appex/VisualGenerationInference
+/System/Library/ExtensionKit/Extensions/VisualIntelligenceCameraAnalytics.appex/VisualIntelligenceCameraAnalytics
 /System/Library/ExtensionKit/Extensions/WallpaperSettingsIntents.appex/WallpaperSettingsIntents
 /System/Library/ExtensionKit/Extensions/WebThumbnailExtension.appex/WebThumbnailExtension
 /System/Library/ExtensionKit/Extensions/WiFiSettingsControlsExtension.appex/WiFiSettingsControlsExtension
@@ -1271,6 +1277,7 @@
 /System/Library/PrivateFrameworks/MobileAccessoryUpdater.framework/XPCServices/UARPUpdaterServiceHID.xpc/UARPUpdaterServiceHID
 /System/Library/PrivateFrameworks/MobileAccessoryUpdater.framework/XPCServices/UARPUpdaterServiceLegacyAudio.xpc/UARPUpdaterServiceLegacyAudio
 /System/Library/PrivateFrameworks/MobileAccessoryUpdater.framework/XPCServices/UARPUpdaterServiceUSBPD.xpc/UARPUpdaterServiceUSBPD
+/System/Library/PrivateFrameworks/MobileAccessoryUpdater.framework/XPCServices/USBCAccessoryUpdaterService.xpc/USBCAccessoryUpdaterService
 /System/Library/PrivateFrameworks/MobileAsset.framework/XPCServices/ManifestStorageService.xpc/ManifestStorageService
 /System/Library/PrivateFrameworks/MobileAssetDaemon.framework/XPCServices/com.apple.MobileAsset.DownloadService.Builtin.xpc/com.apple.MobileAsset.DownloadService.Builtin
 /System/Library/PrivateFrameworks/MobileBackup.framework/MobileBackupCacheDeleteService
@@ -1613,6 +1620,9 @@
 /private/var/staged_system_apps/Home.app/PlugIns/HomeUtilNotification.appex/HomeUtilNotification
 /private/var/staged_system_apps/Home.app/PlugIns/HomeWidget.appex/HomeWidget
 /private/var/staged_system_apps/Home.app/PlugIns/HomeWidgetLockScreen.appex/HomeWidgetLockScreen
+/private/var/staged_system_apps/Image Playground.app/Extensions/GenerativePlaygroundAppIntents.appex/GenerativePlaygroundAppIntents
+/private/var/staged_system_apps/Image Playground.app/Image Playground
+/private/var/staged_system_apps/Image Playground.app/PlugIns/GenerativePlaygroundMessagesAppExtension.appex/GenerativePlaygroundMessagesAppExtension
 /private/var/staged_system_apps/Journal.app/Journal
 /private/var/staged_system_apps/Journal.app/PlugIns/JournalShareExtension.appex/JournalShareExtension
 /private/var/staged_system_apps/Journal.app/PlugIns/JournalWidgets.appex/JournalWidgets
@@ -1809,7 +1819,7 @@
 /usr/libexec/anomalydetectiond
 /usr/libexec/aonsensed
 /usr/libexec/appleaccountd
-/usr/libexec/applecamerad
+/usr/libexec/appleh16camerad
 /usr/libexec/appleidsetupd
 /usr/libexec/applekeystored
 /usr/libexec/appprotectiond
@@ -1870,6 +1880,7 @@
 /usr/libexec/diagnosticextensionsd
 /usr/libexec/diagnosticspushd
 /usr/libexec/dietapplecamerad
+/usr/libexec/dietappleh16camerad
 /usr/libexec/dirs_cleaner
 /usr/libexec/diskarbitrationd
 /usr/libexec/diskimagesiod
@@ -1939,6 +1950,7 @@
 /usr/libexec/logd_helper
 /usr/libexec/logd_reporter
 /usr/libexec/lsd
+/usr/libexec/lskdP7d
 /usr/libexec/lskdd
 /usr/libexec/magicswitchd
 /usr/libexec/managedappsd
@@ -2117,11 +2129,12 @@
 /usr/sbin/WirelessRadioManagerd
 /usr/sbin/absd
 /usr/sbin/addNetworkInterface
-/usr/sbin/applecamerad
+/usr/sbin/appleh16camerad
 /usr/sbin/bluetoothaudiod
 /usr/sbin/bluetoothd
 /usr/sbin/cfprefsd
 /usr/sbin/ckksctl
+/usr/sbin/dietappleh16camerad
 /usr/sbin/distnoted
 /usr/sbin/fairplayd.H2
 /usr/sbin/filecoordinationd
