@@ -806,14 +806,6 @@
     ]
   },
   {
-    "name": "iOS 18.7.9",
-    "version": "18.7.9",
-    "build": "22H355",
-    "devices": [
-      "iPhone11,8"
-    ]
-  },
-  {
     "name": "iOS 16.7.16",
     "version": "16.7.16",
     "build": "20H392",
@@ -863,6 +855,14 @@
     "build": "23G83",
     "devices": [
       "iPhone18,5"
+    ]
+  },
+  {
+    "name": "iOS 18.7.10",
+    "version": "18.7.10",
+    "build": "22H374",
+    "devices": [
+      "iPhone11,8"
     ]
   }
 ]
