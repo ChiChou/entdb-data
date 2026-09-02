@@ -2106,7 +2106,7 @@
   {
     "name": "macOS Golden Gate",
     "version": "27.0",
-    "build": "26A5421a",
+    "build": "26A5425a",
     "devices": [
       "Mac13,1",
       "Mac13,2",
