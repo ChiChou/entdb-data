@@ -848,21 +848,19 @@
     ]
   },
   {
-    "name": "iOS 27.0",
-    "version": "27.0",
-    "build": "24A5430a",
-    "devices": [
-      "iPhone12,3",
-      "iPhone12,5"
-    ],
-    "beta": true
-  },
-  {
     "name": "iOS 26.6.2",
     "version": "26.6.2",
     "build": "23G90",
     "devices": [
       "iPhone18,5"
+    ]
+  },
+  {
+    "name": "iOS 27.0",
+    "version": "27.0",
+    "build": "24A437",
+    "devices": [
+      "iPhone19,2"
     ]
   }
 ]
