@@ -2106,7 +2106,7 @@
   {
     "name": "macOS Golden Gate",
     "version": "27.0",
-    "build": "26A5425a",
+    "build": "26A428",
     "devices": [
       "Mac13,1",
       "Mac13,2",
@@ -2146,6 +2146,9 @@
       "Mac16,7",
       "Mac16,8",
       "Mac16,9",
+      "Mac17,14",
+      "Mac17,15",
+      "Mac17,16",
       "Mac17,2",
       "Mac17,3",
       "Mac17,4",
@@ -2154,6 +2157,7 @@
       "Mac17,7",
       "Mac17,8",
       "Mac17,9",
+      "Mac18,5",
       "MacBookAir10,1",
       "MacBookPro17,1",
       "MacBookPro18,1",
@@ -2164,7 +2168,6 @@
       "VirtualMac2,1",
       "iMac21,1",
       "iMac21,2"
-    ],
-    "beta": true
+    ]
   }
 ]
