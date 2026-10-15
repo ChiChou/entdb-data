@@ -2173,7 +2173,7 @@
   {
     "name": "macOS Golden Gate",
     "version": "27.2",
-    "build": "26B5101f",
+    "build": "26B5112a",
     "devices": [
       "Mac13,1",
       "Mac13,2",
