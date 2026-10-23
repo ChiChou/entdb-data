@@ -872,5 +872,13 @@
       "iPhone12,5"
     ],
     "beta": true
+  },
+  {
+    "name": "iOS 27.1",
+    "version": "27.1",
+    "build": "24A94425",
+    "devices": [
+      "iPhone19,4"
+    ]
   }
 ]
