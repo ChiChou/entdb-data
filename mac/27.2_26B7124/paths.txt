@@ -725,6 +725,8 @@
 /System/Library/ExtensionKit/Extensions/TimeMachineSettingsIntents.appex/Contents/MacOS/TimeMachineSettingsIntents
 /System/Library/ExtensionKit/Extensions/TimerIntentsExtension.appex/Contents/MacOS/TimerIntentsExtension
 /System/Library/ExtensionKit/Extensions/Touch ID & Password.appex/Contents/MacOS/Touch ID & Password
+/System/Library/ExtensionKit/Extensions/TouchExtension.appex/Contents/MacOS/TouchExtension
+/System/Library/ExtensionKit/Extensions/TouchSettingsIntents.appex/Contents/MacOS/TouchSettingsIntents
 /System/Library/ExtensionKit/Extensions/TrackpadExtension.appex/Contents/MacOS/TrackpadExtension
 /System/Library/ExtensionKit/Extensions/TrackpadExtension.appex/Contents/Resources/tplog
 /System/Library/ExtensionKit/Extensions/TrackpadIntentsExtension.appex/Contents/MacOS/TrackpadIntentsExtension
