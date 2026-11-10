@@ -864,14 +864,6 @@
     ]
   },
   {
-    "name": "iOS 27.2",
-    "version": "27.2",
-    "build": "24B91020",
-    "devices": [
-      "iPhone19,4"
-    ]
-  },
-  {
     "name": "iOS 18.7.11",
     "version": "18.7.11",
     "build": "22H384",
@@ -888,5 +880,13 @@
       "iPhone12,5"
     ],
     "beta": true
+  },
+  {
+    "name": "iOS 27.2.1",
+    "version": "27.2.1",
+    "build": "24B91034",
+    "devices": [
+      "iPhone19,4"
+    ]
   }
 ]
