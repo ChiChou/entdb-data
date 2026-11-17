@@ -864,16 +864,6 @@
     ]
   },
   {
-    "name": "iOS 27.3",
-    "version": "27.3",
-    "build": "24C5037i",
-    "devices": [
-      "iPhone12,3",
-      "iPhone12,5"
-    ],
-    "beta": true
-  },
-  {
     "name": "iOS 27.2.1",
     "version": "27.2.1",
     "build": "24B91034",
@@ -888,5 +878,15 @@
     "devices": [
       "iPhone11,8"
     ]
+  },
+  {
+    "name": "iOS 27.3",
+    "version": "27.3",
+    "build": "24C5049d",
+    "devices": [
+      "iPhone12,3",
+      "iPhone12,5"
+    ],
+    "beta": true
   }
 ]
