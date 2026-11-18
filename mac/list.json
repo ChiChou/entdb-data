@@ -2172,8 +2172,17 @@
   },
   {
     "name": "macOS Golden Gate",
+    "version": "27.2.1",
+    "build": "26B7131",
+    "devices": [
+      "Mac18,1",
+      "Mac18,2"
+    ]
+  },
+  {
+    "name": "macOS Golden Gate",
     "version": "27.3",
-    "build": "26C5035r",
+    "build": "26C5047e",
     "devices": [
       "Mac13,1",
       "Mac13,2",
@@ -2243,14 +2252,5 @@
       "iMac21,2"
     ],
     "beta": true
-  },
-  {
-    "name": "macOS Golden Gate",
-    "version": "27.2.1",
-    "build": "26B7131",
-    "devices": [
-      "Mac18,1",
-      "Mac18,2"
-    ]
   }
 ]
