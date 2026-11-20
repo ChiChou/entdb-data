@@ -37,11 +37,6 @@ jobs:
         run: |
           mkdir -p previous
           gh release download --pattern "ent.db" -D previous 2>/dev/null || true
-          gh release download --pattern "kv.tar.gz" -D previous 2>/dev/null || true
-          if [ -f previous/kv.tar.gz ]; then
-            tar -xzf previous/kv.tar.gz -C previous
-            rm previous/kv.tar.gz
-          fi
           if [ -f previous/ent.db ]; then
             echo "found=true" >> "$GITHUB_OUTPUT"
           else
@@ -70,13 +65,14 @@ jobs:
             TAG="${TAG}-${SEQ}"
           fi
 
-          cp build-output/ent.db ent.db
-          cd build-output && tar -czf ../kv.tar.gz --exclude=ent.db . && cd ..
+          # The database is a release asset (it makes the next build
+          # incremental); only the JSON records are served from Pages.
+          mv build-output/ent.db ent.db
           gh release create "$TAG" \
             --title "Data Build $TAG" \
             --notes "Auto-built from latest data." \
             --latest \
-            ent.db kv.tar.gz
+            ent.db
         env:
           GH_TOKEN: ${{ github.token }}
 
